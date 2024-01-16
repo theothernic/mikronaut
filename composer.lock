@@ -4,8 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c491b8531eec05ba41a11d9276a5749",
+    "content-hash": "19e41c1bb12a7c6897e162dd011134f6",
     "packages": [
+        {
+            "name": "bearlovescode/datamodels",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bearlovescode/datamodels.git",
+                "reference": "566ffc61f4999d48c85dbef9b145936dcc174cd6"
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bearlovescode\\Datamodels\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Nic Barr",
+                    "email": "code@bearlovescode.com"
+                }
+            ],
+            "time": "2024-01-14T04:50:09+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.11.0",
@@ -1047,16 +1073,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.40.0",
+            "version": "v10.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7a9470071dac9579ebf29ad1b9d73e4b8eb586fc"
+                "reference": "da31969bd35e6ee0bbcd9e876f88952dc754b012"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7a9470071dac9579ebf29ad1b9d73e4b8eb586fc",
-                "reference": "7a9470071dac9579ebf29ad1b9d73e4b8eb586fc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/da31969bd35e6ee0bbcd9e876f88952dc754b012",
+                "reference": "da31969bd35e6ee0bbcd9e876f88952dc754b012",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1274,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-01-09T11:46:47+00:00"
+            "time": "2024-01-16T15:23:58+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -8145,7 +8171,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "bearlovescode/datamodels": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

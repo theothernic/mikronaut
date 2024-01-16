@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,18 +17,18 @@
     <title>{{ $page->title ?? 'Hello there.' }} -- {{ config('app.name') }}</title>
 
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-    @vite(['resources/css/app.css'])
+    @vite(['resources/js/blog.js'])
 
 </head>
 <body>
 
 
-<div class="ctr flex centered">
+<div class="ct flex centered">
     <aside id="sidebar" class="flex-one">
 
 
         <div class="brand">
-            <h1><a href="{{ route('home') }}">{{ config('app.name') }}</a></h1>
+            <h1><a href="{{ route('front') }}">{{ config('app.name') }}</a></h1>
         </div>
 
         <div class="description">

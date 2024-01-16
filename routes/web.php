@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', \App\Http\Controllers\FrontpageController::class)->name('front');
+Route::get('p/{id}', \App\Http\Controllers\Content\SingleController::class)->name('content.single');
+
+
+Route::get('login', \App\Http\Controllers\Auth\LoginController::class)->name('login');
+Route::post('login', [\App\Http\Controllers\Auth\LoginController::class, 'handle'])->name('login.handle');
+
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', \App\Http\Controllers\User\DashboardController::class)->name('user.dashboard');
+
+    Route::get('editor', \App\Http\Controllers\Content\EditorController::class)->name('content.editor');
+
+    Route::resource('content', \App\Http\Controllers\Content\ResourceController::class)
+        ->only(['store', 'update', 'destroy']);
 });
+

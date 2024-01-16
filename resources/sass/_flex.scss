@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+}
+
+.flex .flex-one {
+    flex: 1;
+}
+
+.flex .flex-two {
+    flex: 2;
+}
+
+.flex.justify-content--center {
+    justify-content: center;
+}
+
+.flex.align-items--center {
+    align-items: center;
+}
+
+.flex .align-self--start {
+    align-self: flex-start;
+}
+.flex .align-self--center {
+    align-self: center;
+}
+
+.flex .align-self--end {
+    align-self: flex-end;
+}
