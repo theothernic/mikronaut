@@ -11,7 +11,7 @@ class StoreContentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class StoreContentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'author_id' => 'sometimes|uuid',
+            'title' => 'sometimes|max:150',
+            'body' => 'required|min:5',
+            'type' => 'required',
+            'format' => 'required',
+            'visibility' => 'required',
+            'publish_at' => 'sometimes'
         ];
     }
 }

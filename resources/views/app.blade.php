@@ -18,7 +18,7 @@
 
         <section>
 
-            @if ($page->user)
+            @if (isset($page->user))
                 <div class="greeting">Howdy, <a href="{{ route('user.dashboard') }}">{{ $page->user->name }}</a></div>
             @endif
         </section>

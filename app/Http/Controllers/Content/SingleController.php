@@ -15,12 +15,16 @@
 
         public function __invoke(string $id)
         {
-            $record = $this->contentService->get($id);
-            $author = $this->userService->get($record->author_id);
+            $content = $this->contentService->get($id);
+            $author = $this->userService->get($content->author_id);
 
             $page = new SingleViewModel([
-                'title' => sprintf('%s: %s', ucfirst($record->type), $record->title),
-                'content' => $record->getDto(),
+                'meta' => [
+                    'author' => $author->name
+                ],
+                'title' => sprintf('%s: %s', ucfirst($content->type),
+                    $content->title ?? substr($content->body, 0,25)),
+                'content' => $content->getDto(),
                 'author' => $author->getDto()
             ]);
 

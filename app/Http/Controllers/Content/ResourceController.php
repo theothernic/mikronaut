@@ -5,6 +5,7 @@
     use App\Http\Controllers\Controller;
     use App\Http\Requests\StoreContentRequest;
     use App\Services\ContentService;
+    use Illuminate\Support\Facades\Auth;
 
     class ResourceController extends Controller
     {

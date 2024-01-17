@@ -53,17 +53,21 @@ main#content {
     padding: 1rem;
 
     color: #444;
+
+    .sep {
+        padding: 0 0.3rem;
+    }
 }
 
 
-main#content ul.tweets {
+main#content ul.posts {
     padding: 0;
     margin: 0;
 
     list-style: none;
 }
 
-main#content ul.tweets li {
+main#content ul.posts li {
     padding: 0;
     margin: 1rem 0;
 }
@@ -106,6 +110,7 @@ main#content .meta .author {
     line-height: 1.6rem;
     font-weight: 700;
 }
+
 
 main#content .meta a.permalink {
     color: cyan;

@@ -9,15 +9,27 @@
                 <h1 class="title">{{ $page->title }}</h1>
             </header>
 
+            @if($errors->any())
+                <div class="errors">
+                    <h1>Hold on a sec...</h1>
+
+                    <ul>
+                        @foreach($errors->all() as $e)
+                        <li>{{ $e }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div class="body flex row gutter">
                 <section class="editarea flex-two">
                     <div class="control">
                         <label for="txtContentTitle">Title</label>
-                        <input type="text" id="txtContentTitle" name="title" required="required" />
+                        <input type="text" id="txtContentTitle" name="title" value="{{ old('title') }}"/>
                     </div>
                     <div class="control">
                         <label for="txtContentBody">Body</label>
-                        <textarea id="txtContentBody" name="body" required="required"></textarea>
+                        <textarea id="txtContentBody" name="body" required="required">{{ old('body') }}</textarea>
                     </div>
                 </section>
                 <aside class="sidebar flex-one">
@@ -26,7 +38,7 @@
                     </div>
                     <h3>Content Type</h3>
                     <div class="control">
-                        <select id="cboContentType" name="content_type_key" required="required">
+                        <select id="cboContentType" name="type" required="required">
                             @foreach($page->contentTypes as $ctype)
                                 <option value="{{ $ctype }}">{{ ucfirst($ctype) }}</option>
                             @endforeach
@@ -53,6 +65,8 @@
                     </div>
                 </aside>
             </div>
+
+            <input type="hidden" name="author_id" value="{{ $page->user->id }}" autocomplete="off"/>
             @csrf
         </form>
     </div>
