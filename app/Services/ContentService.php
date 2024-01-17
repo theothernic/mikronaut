@@ -7,7 +7,10 @@
     class ContentService
 
     {
-
+        public function get(string $id) : Content
+        {
+            return Content::findOrFail($id);
+        }
 
         public function save(array $data = []) : void
         {

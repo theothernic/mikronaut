@@ -4,7 +4,7 @@
 
     use Bearlovescode\Datamodels\Dto\Dto;
 
-    class ContentDto extends Dto
+    class ContentDto extends Dto implements IDto
     {
 
     }

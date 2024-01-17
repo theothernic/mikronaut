@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Http\Controllers\FrontpageController::class)->name('front');
-Route::get('p/{id}', \App\Http\Controllers\Content\SingleController::class)->name('content.single');
+Route::get('p/{id}.html', \App\Http\Controllers\Content\SingleController::class)->name('content.single');
 
 
 Route::get('login', \App\Http\Controllers\Auth\LoginController::class)->name('login');
