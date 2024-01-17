@@ -3,7 +3,7 @@
 
 
 @section('content')
-    <div class="container medium content-editor">
+    <div class="ct medium content-editor">
         <form id="frmContentEditor" name="frmContentEditor" method="post" action="{{ route('content.store') }}" >
             <header>
                 <h1 class="title">{{ $page->title }}</h1>

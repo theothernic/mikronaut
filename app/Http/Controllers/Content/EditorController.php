@@ -9,7 +9,11 @@
     {
         public function __invoke(string $id = '')
         {
-            $page = new EditorViewModel();
+            $page = new EditorViewModel([
+                'title' => 'Editor'
+            ]);
+
+
 
             return view('content.editor', compact('page'));
         }

@@ -1,4 +1,14 @@
 .ct {
     margin: 0 auto;
     width: 66%;
+
+    &.sm {
+        width: 45%;
+    }
+
+    &.lg {
+        width: 80%
+    }
 }
+
+

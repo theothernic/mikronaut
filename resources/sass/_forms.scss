@@ -1,0 +1,28 @@
+
+
+form {
+
+    input,
+    textarea {
+        box-sizing: content-box;
+        width: 100%;
+    }
+
+    input[type="text"] {
+        height: 6vh;
+    }
+
+    .control {
+        margin-top: 1rem;
+        &:first-of-type {
+            margin: initial;
+        }
+
+        label {
+            display:inline-block;
+            padding-bottom: 1rem;
+            font-weight: bold;
+
+        }
+    }
+}

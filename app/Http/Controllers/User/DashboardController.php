@@ -19,7 +19,7 @@
         {
             $user = $this->userService->get(Auth::id());
             $page = new DashboardViewModel([
-                'user' => $user->getDto()
+                'title' => "User Dashboard"
             ]);
 
             return view('user.dashboard', compact('page'));

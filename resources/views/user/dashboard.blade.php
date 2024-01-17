@@ -5,15 +5,20 @@
 @section('content')
     <div class="container">
         <header>
-            <h1>{{ $page->title }}</h1>
+            <div class="ct">
+                <h1>{{ $page->title }}</h1>
+            </div>
         </header>
 
         <div id="body">
-            This is the user dashboard.
+            <div class="ct">
+                This is the user dashboard.
 
-            <div>
-                <a href="{{ route('content.editor') }}">Editor</a>
+                <div>
+                    <a href="{{ route('content.editor') }}">Editor</a>
+                </div>
             </div>
+
         </div>
 
     </div>
