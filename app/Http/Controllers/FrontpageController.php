@@ -16,12 +16,12 @@
 
         public function __invoke(Request $request)
         {
-            $records = $this->contentService->paginatedList();
+            $content = $this->contentService->paginatedList();
 
 
             $page = new ListViewModel([
-                'records' => $records,
-                'paginator' => new Paginator($records, config('content.limit'), $request->get('page'))
+                'content' => $content,
+                'paginator' => new Paginator($content, config('content.limit'), $request->get('page'))
             ]);
 
             return view('content.list', compact('page'));

@@ -2,12 +2,23 @@
 @section('title', $page->title)
 
 @section('content')
-    @unless($page->records->isEmpty())
+    @unless($page->content->isEmpty())
         <ul class="posts">
-            @foreach($page->records as $p)
+            @foreach($page->content as $p)
             <li>
                 <article class="excerpt {{ $p->type }}">
-                    {{ $p->body }}
+                    <header>
+                        @if ($p->title)<h2 class="title">{{ $p->title }}</h2>@endif
+                    </header>
+
+                    <section class="body">
+                        {{ $p->body }}
+                    </section>
+
+
+                    <footer>
+                        <a class="more" title="Link to post {{ $p->title ?? $p->id }}" href="{{ route('content.single', $p->id) }}">More &raquo;</a>
+                    </footer>
                 </article>
 
                 <div class="meta flex align-items--center">

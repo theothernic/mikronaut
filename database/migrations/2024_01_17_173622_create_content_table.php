@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('content', function (Blueprint $table) {
-            $table->ulid('id')->primary();
+            $table->unsignedBigInteger('id')->primary();
             $table->uuid('author_id');
             $table->enum('type', array_keys(Content::TYPES))->default('post');
             $table->string('title')->nullable();

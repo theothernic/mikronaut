@@ -6,10 +6,14 @@
     use Illuminate\Database\Eloquent\Concerns\HasUlids;
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\SoftDeletes;
+    use Illuminate\Support\Carbon;
+    use Illuminate\Support\Facades\Auth;
 
     class Content extends Model implements IDtoable
     {
-        use HasUlids, SoftDeletes;
+        use SoftDeletes;
+
+        public $incrementing = false;
 
         public const TYPES = [
             'post' => 'post',
@@ -53,5 +57,17 @@
         public function getDto() : ContentDto
         {
             return new ContentDto($this->getAttributes());
+        }
+
+        public static function boot()
+        {
+            parent::boot();
+
+            static::creating(function (Content $model) {
+                $model->id = (int) Carbon::now()->timestamp;
+
+                if (empty($model->author_id))
+                    $model->author_id = Auth::id();
+            });
         }
     }
