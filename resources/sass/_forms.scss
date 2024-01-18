@@ -6,13 +6,11 @@ form {
     textarea {
         box-sizing: content-box;
         width: 100%;
+        font-family: 'Inter', sans-serif;
     }
 
-    input,
-    textarea
-    {
-        font-family: 'Inter', sans-serif;
-        height: 6vh;
+    input {
+        height: 3vh;
     }
 
     textarea {

@@ -40,7 +40,8 @@
                     <div class="control">
                         <select id="cboContentType" name="type" required="required">
                             @foreach($page->contentTypes as $ctype)
-                                <option value="{{ $ctype }}" @selected($page->content->type == $ctype)>{{ ucfirst($ctype) }}</option>
+                                <option value="{{ $ctype }}"
+                                    @selected(!empty($page->content->type) && $page->content->type == $ctype)>{{ ucfirst($ctype) }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -49,7 +50,9 @@
                     <div class="control">
                         <select id="cboContentFormat" name="format" required="required">
                             @foreach($page->contentFormats as $val => $fmt)
-                                <option value="{{ $val }}" @selected($page->content->format == $val)>{{ ucfirst($fmt) }}</option>
+                                <option value="{{ $val }}"
+                                    @selected(!empty($page->content->format) && $page->content->format == $val)>
+                                    {{ ucfirst($fmt) }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -59,7 +62,9 @@
                     <div class="control">
                         <select id="cboContentVisibility" name="visibility" required="required">
                             @foreach($page->contentVisibility as $vis)
-                                <option value="{{ $vis }}" @selected($page->content->visibility == $vis)>{{ ucfirst($vis) }}</option>
+                                <option value="{{ $vis }}"
+                                    @selected(!empty($page->content->visibility) && $page->content->visibility == $vis)>
+                                    {{ ucfirst($vis) }}</option>
                             @endforeach
                         </select>
                     </div>

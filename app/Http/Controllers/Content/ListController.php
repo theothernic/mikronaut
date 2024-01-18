@@ -7,7 +7,9 @@ class ListController
 {
     public function __invoke()
     {
-        $page = new ListViewModel();
+        $page = new ListViewModel([
+            'title' => 'Dem posts.'
+        ]);
 
         return view('content.single', compact('page'));
     }

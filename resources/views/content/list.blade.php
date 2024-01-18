@@ -17,14 +17,14 @@
 
 
                     <footer>
-                        <a class="more" title="Link to post {{ $p->title ?? $p->id }}" href="{{ route('content.single', $p->id) }}">More &raquo;</a>
+                        &nbsp;
                     </footer>
                 </article>
 
                 <div class="meta flex align-items--center">
                     <div class="postline">posted at {{ $p->publishAt->format('m.d.Y') }}</div>
                     <span class="sep">&bull;</span>
-                    <a href="{{ route('content.single', $p->id) }}" class="permalink">Permalink</a>
+                    <a href="{{ route('content.single', $p->id) }}" title="Link to post {{ $p->title ?? $p->id }}" class="permalink">Read More/Link&hellip;</a>
                     @if($page->userIsLoggedIn)
                     <span class="sep">&bull;</span>
                     <a href="{{ route('content.editor', ['reply' => $p->id]) }}" class="reply">Reply to&hellip;</a>

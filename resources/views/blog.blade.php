@@ -14,7 +14,7 @@
 
     @endforeach
 
-    <title>{{ $page->title ?? 'Hello there.' }} -- {{ config('app.name') }}</title>
+    <title>{{ $page->title ?? 'Hello there.' }} {{ config('app.name') }}</title>
 
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     @vite(['resources/js/blog.js'])
