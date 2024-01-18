@@ -91,6 +91,18 @@ main#content {
 
         }
     }
+
+    .meta {
+        a {
+            color: orchid;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: magenta;
+            }
+        }
+    }
 }
 
 

@@ -8,9 +8,15 @@ form {
         width: 100%;
     }
 
-    input {
+    input,
+    textarea
+    {
         font-family: 'Inter', sans-serif;
         height: 6vh;
+    }
+
+    textarea {
+        padding: 0.4rem;
     }
 
     .control {

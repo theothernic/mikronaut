@@ -18,6 +18,10 @@
         public ?string $type;
         public ?string $title;
         public string $body;
+        public string $format;
+        public string $visibility;
+        public ?string $visibility_key = null;
+
         public Carbon $publishAt;
 
         private function setPublishAt(array &$data) : void

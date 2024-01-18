@@ -25,6 +25,12 @@
                     <div class="postline">posted at {{ $p->publishAt->format('m.d.Y') }}</div>
                     <span class="sep">&bull;</span>
                     <a href="{{ route('content.single', $p->id) }}" class="permalink">Permalink</a>
+                    @if($page->userIsLoggedIn)
+                    <span class="sep">&bull;</span>
+                    <a href="{{ route('content.editor', ['reply' => $p->id]) }}" class="reply">Reply to&hellip;</a>
+                    <span class="sep">&bull;</span>
+                    <a href="{{ route('content.editor', ['edit' => $p->id]) }}" class="edit">Edit&hellip;</a>
+                    @endif
                 </div>
             </li>
             @endforeach
