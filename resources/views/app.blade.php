@@ -11,19 +11,21 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-    <header id="masthead" class="flex row jc-btw align-items--center">
-        <section class="brand">
-            <h1>{{ config('app.name') }}</h1>
-        </section>
+    <div class="app-page">
+        <header id="masthead" class="flex row jc-btw align-items--center">
+            <section class="brand">
+                <h1>{{ config('app.name') }}</h1>
+            </section>
 
-        <section>
+            <section>
 
-            @if (isset($page->user))
-                <div class="greeting">Howdy, <a href="{{ route('user.dashboard') }}">{{ $page->user->name }}</a></div>
-            @endif
-        </section>
-    </header>
-    <main id="content">@yield('content')</main>
-    <footer id="colophon"></footer>
+                @if (isset($page->user))
+                    <div class="greeting">Howdy, <a href="{{ route('user.dashboard') }}">{{ $page->user->name }}</a></div>
+                @endif
+            </section>
+        </header>
+        <main id="content">@yield('content')</main>
+        <footer id="colophon"></footer>
+    </div>
 </body>
 </html>

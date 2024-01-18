@@ -1,26 +1,21 @@
-
-
 form {
-
-    input,
-    textarea {
-        box-sizing: content-box;
-        width: 100%;
-        font-family: 'Inter', sans-serif;
-    }
-
-    input {
-        height: 3vh;
-    }
-
-    textarea {
-        padding: 0.4rem;
-    }
-
     .control {
-        margin-top: 1rem;
-        &:first-of-type {
-            margin: initial;
+        margin: 1rem 0;
+
+        input,
+        textarea {
+            box-sizing: content-box;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input {
+            height: 1.4rem;
+            min-height: 1.4rem;
+        }
+
+        textarea {
+            padding: 0.4rem;
         }
 
         label {

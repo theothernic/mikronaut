@@ -23,10 +23,12 @@
 <body>
 
 
-<div class="ct flex centered">
+<div class="ct flex blog-page gutter centered">
+    <div class="brand">
+        <h1><a href="{{ route('front') }}">{{ config('app.name') }}</a></h1>
+    </div>
+
     <aside id="sidebar" class="flex-one">
-
-
         <div class="brand">
             <h1><a href="{{ route('front') }}">{{ config('app.name') }}</a></h1>
         </div>
@@ -34,9 +36,7 @@
         <div class="description">
             <h3>What's this about?</h3>
             <p>
-                This is an archive of tweets just in case the birdsite crashes
-                permanently. It has rudimentary functionality, and is always in
-                a state of flux, just as its author (hasn't) intended.
+                {{ $page->meta->description ?? null }}
             </p>
 
         </div>
