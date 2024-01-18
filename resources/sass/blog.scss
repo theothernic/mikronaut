@@ -2,9 +2,9 @@
 @import 'fonts';
 
 body {
-    background: dodgerblue;
+    background: rebeccapurple;
     font-family: 'Inter', sans-serif;
-    color: #fff;
+    color: lavenderblush;
 }
 
 aside#sidebar {
@@ -14,12 +14,14 @@ aside#sidebar {
 
 aside#sidebar h3 {
     margin: 0.5rem 0;
+    color: lightskyblue;
 }
 
 aside#sidebar .brand h1 {
     margin: 1rem 0;
     font-size: 3rem;
     font-weight: 900;
+    color: #bf00ff;
 }
 
 aside#sidebar .brand h1 a {
@@ -52,10 +54,42 @@ aside#sidebar .search #txtSearchEntry {
 main#content {
     padding: 1rem;
 
-    color: #444;
-
     .sep {
         padding: 0 0.3rem;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem 1rem 0.5rem 1rem;
+        color: #4b5563;
+
+        .title {
+            padding-top: 0.4rem;
+            padding-bottom: 1rem;
+            color: mediumorchid;
+        }
+
+        footer {
+            display: flex;
+            margin: 0.4rem;
+
+            .more {
+                flex: 1;
+                text-align: right;
+                font-weight: 600;
+                color: purple;
+
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+
+        }
     }
 }
 
@@ -73,27 +107,11 @@ main#content ul.posts li {
 }
 
 main#content article {
-    padding: 1rem;
 
     background: #fff;
 
     border-radius: 0.6rem;
-    box-shadow: 0.4rem 0.4rem #444;
-}
-
-main#content article::after {
-    content: "";
-    display: block;
-    position: relative;
-    margin-top: 0px;
-    padding-top: 0px;
-    bottom: -30px;
-    left: 20px;
-    border-width: 30px 30px 0 0;
-    border-style: solid;
-    border-color: #fff transparent;
-    width: 2px;
-    border-radius: 0 0 0 40px;
+    box-shadow: 0.4rem 0.4rem lavender;
 }
 
 main#content .meta {
@@ -113,7 +131,7 @@ main#content .meta .author {
 
 
 main#content .meta a.permalink {
-    color: cyan;
+    color: orchid;
     text-decoration: none;
 }
 
