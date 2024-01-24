@@ -20,6 +20,9 @@
 
 
             $page = new ListViewModel([
+                'site' => [
+                    'description' => $this->site('description')
+                ],
                 'title' => sprintf('Welkommen der %s --', config('app.name')),
                 'content' => $content,
                 'paginator' => new Paginator($content, config('content.limit'), $request->get('page'))

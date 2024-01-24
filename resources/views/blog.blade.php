@@ -33,13 +33,15 @@
             <h1><a href="{{ route('front') }}">{{ config('app.name') }}</a></h1>
         </div>
 
+
+        @unless(empty($page->site['description']))
         <div class="description">
             <h3>What's this about?</h3>
             <p>
-                {{ $page->meta->description ?? null }}
+                {{ $page->site['description'] }}
             </p>
-
         </div>
+        @endunless
 
         {{--<div class="search">
             <h3>Search</h3>

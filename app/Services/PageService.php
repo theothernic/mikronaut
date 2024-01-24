@@ -7,6 +7,10 @@
 
     class PageService
     {
+        public function __construct(
+            private readonly SettingService $settings
+        )
+        {}
 
         public function getPage(?string $theme = null, ?string $key = null) : WebPageViewModel
         {

@@ -3,7 +3,7 @@
 
     use App\Models\Dtos\ContentDto;
     use App\Models\Dtos\UserDto;
-    use Bearlovescode\Datamodels\View\PageViewModel;
+    use App\Models\ViewModels\PageViewModel;
     use Illuminate\Support\Facades\Auth;
 
     class SingleViewModel extends PageViewModel

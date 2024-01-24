@@ -1,9 +1,8 @@
 <?php
     namespace App\Models\ViewModels\Content;
 
-    use Bearlovescode\Datamodels\View\PageViewModel;
+    use App\Models\ViewModels\PageViewModel;
     use Illuminate\Pagination\Paginator;
-    use Illuminate\Support\Carbon;
     use Illuminate\Support\Collection;
     use Illuminate\Support\Facades\Auth;
 
