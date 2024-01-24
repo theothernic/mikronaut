@@ -15,7 +15,6 @@ body {
 
 aside#sidebar {
     padding: 1rem;
-    max-width: 20vw;
 
     h3 {
         margin: 0.5rem 0;
@@ -36,6 +35,7 @@ aside#sidebar {
             a {
                 color: inherit;
                 text-decoration: none;
+                word-wrap: break-word;
 
                 &:visited {
                     color: inherit;
