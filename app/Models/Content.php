@@ -18,7 +18,8 @@
         public const TYPES = [
             'post' => 'post',
             'image' => 'image',
-            'page' => 'page'
+            'page' => 'page',
+            'link' => 'link'
         ];
 
         public const FORMATS = [

@@ -76,6 +76,15 @@ main#content {
             padding-top: 0.4rem;
             padding-bottom: 1rem;
             color: mediumorchid;
+
+            a {
+                color: mediumorchid;
+
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline orange;
+                }
+            }
         }
 
         footer {

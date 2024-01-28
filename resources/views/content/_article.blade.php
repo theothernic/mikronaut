@@ -1,6 +1,14 @@
 <article class="{{ $display }} hentry h-entry content-{{ $content->type }}">
     <header>
-        @if ($content->title)<h2 class="title">{{ $content->title }}</h2>@endif
+        @if ($content->title)
+            <h2 class="title">
+            @if($content->type === 'link')
+            <a href="{{ $content->title }}">{{ $content->title }}</a>
+            @else
+            {{ $content->title }}
+            @endif
+            </h2>
+        @endif
     </header>
 
     <div class="body">
