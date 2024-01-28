@@ -1,0 +1,9 @@
+.git/
+.gitattributes
+.gitignore
+.editorconfig
+node_modules/
+tests/
+phpunit.xml
+storage/logs
+rsync/
