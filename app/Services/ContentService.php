@@ -13,10 +13,10 @@
             return Content::findOrFail($id);
         }
 
-        public function paginatedList(int $perPage = 10, bool $simple = true)
+        public function paginatedList(int $perPage = 10, bool $simple = true, string $order = 'asc')
         {
             $records = collect();
-            $data = ($simple) ? Content::simplePaginate($perPage) : Content::paginate($perPage);
+            $data = ($simple) ? Content::orderBy('created_at', $order)->simplePaginate($perPage) : Content::orderBy('created_at', $order)->paginate($perPage);
 
             foreach ($data as $row)
                 $records->push($row->getDto());
