@@ -12,7 +12,7 @@
                     </header>
 
                     <section class="body">
-                        {{ $p->body }}
+                        {!! $p->body !!}
                     </section>
 
 
