@@ -16,7 +16,9 @@
         public function paginatedList(int $perPage = 10, bool $simple = true, string $order = 'asc')
         {
             $records = collect();
-            $data = ($simple) ? Content::orderBy('created_at', $order)->simplePaginate($perPage) : Content::orderBy('created_at', $order)->paginate($perPage);
+            $content = Content::orderBy('publish_at', $order);
+
+            $data = ($simple) ? $content->simplePaginate($perPage) : $content->paginate($perPage);
 
             foreach ($data as $row)
                 $records->push($row->getDto());
@@ -29,6 +31,21 @@
             if (empty($data['author_id']))
                 $data['author_id'] = Auth::id();
 
+            $data = match ($data['format']) {
+                'html' => $this->formatHtml($data),
+                default => $data
+            };
+
             Content::create($data);
+        }
+
+        private function formatHtml(array $data): array
+        {
+            $data['title'] = strip_tags($data['title']);
+
+            $data['body'] = htmlspecialchars($data['body']);
+            $data['body'] = nl2br($data['body']);
+
+            return $data;
         }
     }
