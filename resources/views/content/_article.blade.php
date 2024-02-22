@@ -12,7 +12,7 @@
     </header>
 
     <div class="body">
-        {!! $content->body !!}
+        {!! html_entity_decode($content->body) !!}
     </div>
 
     <footer></footer>
