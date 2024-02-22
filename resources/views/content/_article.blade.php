@@ -12,7 +12,7 @@
     </header>
 
     <div class="body">
-        {{ $content->body }}
+        {!! $content->body !!}
     </div>
 
     <footer></footer>
