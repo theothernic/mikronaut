@@ -35,7 +35,6 @@
             'keyed' => 'keyed'
         ];
 
-
         protected $table = 'content';
         protected $fillable = [
             'author_id',

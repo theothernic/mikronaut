@@ -29,3 +29,6 @@ Route::middleware('auth')->group(function () {
         ->only(['store', 'update', 'destroy']);
 });
 
+
+Route::get('sitemap.xml', \App\Http\Controllers\System\XmlSitemapController::class)->name('sitemap');
+

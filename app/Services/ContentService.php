@@ -39,6 +39,11 @@
             Content::create($data);
         }
 
+        public function getPublicContent(): \Illuminate\Database\Eloquent\Collection
+        {
+            return Content::where('visibility', 'public')->get();
+        }
+
         private function formatHtml(array $data): array
         {
             $data['title'] = strip_tags($data['title']);
