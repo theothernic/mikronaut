@@ -39,6 +39,6 @@
                 unset($data->publish_at);
             }
 
-            $this->rssPublishAt = $this->publishAt->format(\DateTime::RFC822);
+            $this->rssPublishAt = $this->publishAt->format(\DateTime::RFC2822);
         }
     }

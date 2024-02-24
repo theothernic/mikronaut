@@ -39,8 +39,7 @@
                 $contentBody = strip_tags(html_entity_decode($item->body));
                 $el = $this->xml->createElement('item');
                 $el->appendChild($this->xml->createElement('guid', $contentLink));
-                $el->appendChild($this->xml->createElement('title', $item->title ?? Str::of($contentBody)->words(15,
-                '...')));
+                $el->appendChild($this->xml->createElement('title', $item->title ?? sprintf('Post: %s', $item->id)));
                 $el->appendChild($this->xml->createElement('link', $contentLink));
                 $el->appendChild($this->xml->createElement('description', $item->excerpt ?? Str::of($contentBody)->words( 75, '...')));
                 $el->appendChild($this->xml->createElement('pubDate', $item->rssPublishAt));
@@ -60,7 +59,7 @@
             $channel = $this->xml->createElement('channel');
 
             $atomLinkEl = $this->xml->createElement('atom:link');
-            $atomLinkEl->setAttribute('href', $dto->link);
+            $atomLinkEl->setAttribute('href', route('feeds.rss'));
             $atomLinkEl->setAttribute('rel', 'self');
             $atomLinkEl->setAttribute('type', 'application/rss+xml');
 

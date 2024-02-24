@@ -40,7 +40,7 @@
                     'link' => Uri::new(route('front')),
                     'description' => SettingHelper::siteSetting('description'),
                     'language' => app()->getLocale(),
-                    'pubDate' => (new \DateTime())->format(\DateTime::RFC822)
+                    'pubDate' => (new \DateTime())->format(\DateTime::RFC2822)
                 ])
             ]);
         }
