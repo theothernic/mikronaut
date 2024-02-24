@@ -56,6 +56,11 @@
 
         public function getDto() : ContentDto
         {
+            return $this->asDto();
+        }
+
+        public function asDto() : ContentDto
+        {
             return new ContentDto($this->getAttributes());
         }
 

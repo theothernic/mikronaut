@@ -31,4 +31,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('sitemap.xml', \App\Http\Controllers\System\XmlSitemapController::class)->name('sitemap');
+Route::prefix('feeds')->name('feeds.')->group(function () {
+    Route::get('rss.xml', \App\Http\Controllers\Feeds\RssFeedController::class)->name('rss');
+});
 
