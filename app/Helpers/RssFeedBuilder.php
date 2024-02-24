@@ -35,11 +35,12 @@
             $feedItems = collect();
             foreach ($items as $item)
             {
+                $contentTitle = (empty($item->title)) ? sprintf('Post: %s', $item->id) : $item->title;
                 $contentLink = route('content.single', $item->id);
                 $contentBody = strip_tags(html_entity_decode($item->body));
                 $el = $this->xml->createElement('item');
                 $el->appendChild($this->xml->createElement('guid', $contentLink));
-                $el->appendChild($this->xml->createElement('title', $item->title ?? sprintf('Post: %s', $item->id)));
+                $el->appendChild($this->xml->createElement('title', $contentTitle));
                 $el->appendChild($this->xml->createElement('link', $contentLink));
                 $el->appendChild($this->xml->createElement('description', $item->excerpt ?? Str::of($contentBody)->words( 75, '...')));
                 $el->appendChild($this->xml->createElement('pubDate', $item->rssPublishAt));
