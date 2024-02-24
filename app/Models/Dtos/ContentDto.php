@@ -23,6 +23,7 @@
         public ?string $visibility_key = null;
 
         public Carbon $publishAt;
+        public ?string $rssPublishAt;
 
         private function setPublishAt(array &$data) : void
         {
@@ -38,5 +39,6 @@
                 unset($data->publish_at);
             }
 
+            $this->rssPublishAt = $this->publishAt->format(\DateTime::RFC822);
         }
     }

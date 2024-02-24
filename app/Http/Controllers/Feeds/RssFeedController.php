@@ -22,7 +22,7 @@
             $rss = (new RssFeedBuilder())->build($feedData);
 
             return response($rss->saveXML())
-                ->header('Content-type', 'application/rss+xml');
+                ->header('Content-type', 'text/xml');
         }
 
         private function buildFeedDto(Collection $content): RssFeedDto
@@ -40,7 +40,7 @@
                     'link' => Uri::new(route('front')),
                     'description' => SettingHelper::siteSetting('description'),
                     'language' => app()->getLocale(),
-                    'pubDate' => (new \DateTime())->format(\DateTime::RSS)
+                    'pubDate' => (new \DateTime())->format(\DateTime::RFC822)
                 ])
             ]);
         }
