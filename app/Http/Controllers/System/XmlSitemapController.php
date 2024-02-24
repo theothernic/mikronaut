@@ -5,16 +5,23 @@
     use App\Models\Dtos\SitemapUrlDto;
     use App\Models\ViewModels\System\SitemapViewModel;
     use App\Services\ContentService;
+    use Illuminate\Support\Carbon;
 
     class XmlSitemapController extends Controller
     {
         public function __invoke()
         {
-
             $contentUrls = $this->getContentUrls();
+            $manualUrls = [
+                new SitemapUrlDto([
+                    'loc' => route('front'),
+                    'lastmod' => Carbon::now(),
+                    'changefreq' => 'always'
+                ])
+            ];
 
             $sitemap = new SitemapViewModel([
-                'urls' => array_merge($contentUrls)
+                'urls' => array_merge($manualUrls, $contentUrls)
             ]);
 
             return response()
