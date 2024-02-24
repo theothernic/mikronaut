@@ -7,18 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     @foreach($page->meta as $name => $content)
-
         @unless(empty($content))
             <meta name="{{ $name }}" content="{{ $content }}" />
         @endunless
-
     @endforeach
 
     <title>{{ $page->title ?? 'Hello there.' }} {{ config('app.name') }}</title>
 
+    <link rel="alternate" type="application/rss+xml"
+          title="RSS Feed for {{ config('app.name') }}"
+          href="{{route('feeds.rss')}}" />
+
     <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
     @vite(['resources/js/blog.js'])
 
+    <script>let FOUC_HACK;</script>
 </head>
 <body>
 

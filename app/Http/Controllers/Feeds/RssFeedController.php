@@ -22,7 +22,7 @@
             $rss = (new RssFeedBuilder())->build($feedData);
 
             return response($rss->saveXML())
-                ->header('Content-type', 'text/xml');
+                ->header('Content-type', 'application/rss+xml');
         }
 
         private function buildFeedDto(Collection $content): RssFeedDto
