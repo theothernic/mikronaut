@@ -60,7 +60,13 @@
             $channel = $this->xml->createElement('channel');
 
             foreach ($dto as $key => $value)
+            {
+                if ($value == null)
+                    continue;
+
                 $channel->appendChild(new DOMElement($key, $value));
+            }
+
 
 
             foreach ($items as $el)
