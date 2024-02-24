@@ -38,7 +38,7 @@
                 'channel' => new RssFeedChannelDto([
                     'title' => config('app.name'),
                     'link' => Uri::new(route('front')),
-                    'description' => SettingHelper::siteSetting('description'),
+                    'description' => SettingHelper::siteSetting('description') ?? 'No description available.',
                     'language' => app()->getLocale(),
                     'pubDate' => (new \DateTime())->format(\DateTime::RFC2822)
                 ])
