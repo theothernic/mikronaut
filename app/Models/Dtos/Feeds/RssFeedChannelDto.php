@@ -8,7 +8,7 @@
     {
         public string $title;
         public Uri $link;
-        public string $description;
+        public ?string $description;
         public string $language;
         public string $pubDate;
         public string $generator;
