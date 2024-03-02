@@ -109,6 +109,14 @@ main#content {
 
 
         }
+
+        &.content-link {
+            h2 {
+                padding-top: unset;
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+            }
+        }
     }
 
     .meta {
