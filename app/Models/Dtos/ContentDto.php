@@ -4,6 +4,8 @@
 
     use Bearlovescode\Datamodels\Dto\Dto;
     use Illuminate\Support\Carbon;
+    use Illuminate\Support\Facades\Blade;
+    use Parsedown;
 
     class ContentDto extends Dto implements IDto
     {
@@ -40,5 +42,15 @@
             }
 
             $this->rssPublishAt = $this->publishAt->format(\DateTime::RFC2822);
+        }
+
+        public function fromMarkdown(): string
+        {
+            return (new Parsedown())->text($this->body);
+        }
+
+        public function fromBlade(array $data = []): string
+        {
+            return Blade::compileString($this->body, $data);
         }
     }

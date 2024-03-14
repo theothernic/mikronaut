@@ -10,9 +10,18 @@
             </h2>
         @endif
     </header>
+    @switch($content->format)
 
+        @case('mk')
+        @case('markdown')
+            {!! html_entity_decode(\App\Helpers\ContentParserHelper::fromMarkdown($content->body)) !!}
+        @break
+
+        @default
+            {!! html_entity_decode($content->body) !!}
+    @endswitch
     <div class="body">
-        {!! html_entity_decode($content->body) !!}
+
     </div>
 
     <footer></footer>
