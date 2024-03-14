@@ -72,10 +72,17 @@ main#content {
         padding: 1rem 1rem 0.5rem 1rem;
         color: #4b5563;
 
+        h1, h2 {
+            color: mediumorchid;
+        }
+
+        h3, h4, h5, h6 {
+            color: purple;
+        }
+
         .title {
             padding-top: 0.4rem;
             padding-bottom: 1rem;
-            color: mediumorchid;
 
             a {
                 color: mediumorchid;
@@ -86,6 +93,8 @@ main#content {
                 }
             }
         }
+
+
 
         footer {
             display: flex;

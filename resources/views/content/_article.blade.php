@@ -1,4 +1,4 @@
-<article class="{{ $display }} hentry h-entry content-{{ $content->type }}">
+<article class="{{ $display }} hentry h-entry content-{{ $content->type }} format-{{ $content->format }}">
     <header>
         @if ($content->title)
             <h2 class="title">
