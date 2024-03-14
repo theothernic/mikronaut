@@ -18,7 +18,7 @@
             @break
 
         @default
-            {!! html_entity_decode($content->body) !!}
+            {!! html_entity_decode(\App\Helpers\ContentFormatHelper::formatHtml($content->body)) !!}
     @endswitch
     <div class="body">
 
