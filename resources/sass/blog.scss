@@ -151,16 +151,35 @@ main#content ul.posts {
 
 main#content ul.posts li {
     padding: 0;
-    margin: 0;
+    margin: 1.6rem 0;
 }
 
 main#content article {
-    margin: 1rem 0;
+    padding: 1rem;
 
     background: #fff;
 
     border-radius: 0.6rem;
     box-shadow: 0.4rem 0.4rem lavender;
+
+    .body {
+        p {
+            &:first-of-type {
+                padding-top: 0;
+                margin-top: 0;
+            }
+
+            &:last-of-type {
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    footer {
+        padding: 0;
+        margin: 0;
+    }
 }
 
 main#content .meta {

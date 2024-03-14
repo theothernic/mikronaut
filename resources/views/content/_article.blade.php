@@ -10,18 +10,20 @@
             </h2>
         @endif
     </header>
-    @switch($content->format)
 
-        @case('mk')
-        @case('markdown')
-            {!! html_entity_decode(\App\Helpers\ContentFormatHelper::fromMarkdown($content->body)) !!}
-            @break
-
-        @default
-            {!! html_entity_decode(\App\Helpers\ContentFormatHelper::formatHtml($content->body)) !!}
-    @endswitch
     <div class="body">
+        @switch($content->format)
 
+            @case('mk')
+            @case('markdown')
+                {!! html_entity_decode(\App\Helpers\ContentFormatHelper::fromMarkdown($content->body)) !!}
+                @break
+
+            @default
+                {!! html_entity_decode(
+                        htmlspecialchars_decode(\App\Helpers\ContentFormatHelper::formatHtml($content->body))
+                    , ENT_QUOTES|ENT_HTML5) !!}
+        @endswitch
     </div>
 
     <footer></footer>
