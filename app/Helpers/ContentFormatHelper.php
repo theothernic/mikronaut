@@ -30,15 +30,8 @@
 
         public static function removeStrayBreakTags(string $content): string
         {
-            $repl = [
-                '<br />' => '',
-                '<br>' => ''
-            ];
 
-            foreach ($repl as $from => $to)
-                $content = str_replace($to, $from, $content);
-
-            return $content;
+            return preg_replace('<br\s?/?>', '', $content);
         }
 
         public static    function formatRemoveEmptyParagraphs(string $content): string
