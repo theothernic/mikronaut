@@ -1,6 +1,7 @@
 <?php
     namespace App\Services;
 
+    use App\Helpers\ContentFormatHelper;
     use App\Models\Content;
     use Illuminate\Support\Collection;
     use Illuminate\Support\Facades\Auth;
@@ -48,8 +49,7 @@
         {
             $data['title'] = strip_tags($data['title']);
 
-            $data['body'] = htmlspecialchars($data['body']);
-            $data['body'] = nl2br($data['body']);
+            ContentFormatHelper::formatHtml($data['body']);
 
             return $data;
         }

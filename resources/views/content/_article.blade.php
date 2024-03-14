@@ -2,11 +2,11 @@
     <header>
         @if ($content->title)
             <h2 class="title">
-            @if($content->type === 'link')
-            <a href="{{ $content->title }}">{{ $content->title }}</a>
-            @else
-            {{ $content->title }}
-            @endif
+                @if($content->type === 'link')
+                    <a href="{{ $content->title }}">{{ $content->title }}</a>
+                @else
+                    {{ $content->title }}
+                @endif
             </h2>
         @endif
     </header>
@@ -14,8 +14,8 @@
 
         @case('mk')
         @case('markdown')
-            {!! html_entity_decode(\App\Helpers\ContentParserHelper::fromMarkdown($content->body)) !!}
-        @break
+            {!! html_entity_decode(\App\Helpers\ContentFormatHelper::fromMarkdown($content->body)) !!}
+            @break
 
         @default
             {!! html_entity_decode($content->body) !!}
